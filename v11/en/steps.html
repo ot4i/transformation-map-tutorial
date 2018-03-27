@@ -43,7 +43,7 @@
 	</div>
 	<div class="row">
 	  <div class="small-9 medium-9 large-9 columns">
-	    <h4 class="title">Transformation using a Map in a message flow <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
+	    <h4 class="title">HTTP Input to drive a message flow <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
 	  </div>
 	  <div class="small-3 medium-3 large-3 columns">
 		<a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm')" class="small right helplink">IBM Knowledge Center</a> 
@@ -52,7 +52,7 @@
 	<hr>
 	<div class="row">
 		<div class="small-10 medium-10 large-10 columns">
-		<h5> Learn how to use a Mapping node to transform data using a Map in an App Connect Enterprise message flow by exploring this simple example. </h5>
+		<h5> Learn how to use an HTTPInput node to parse JSON data in an IBM Integration Bus message flow by exploring this simple example. </h5>
 		</div>
 		<div class="small-2 medium-2 large-2 columns">
 			<button class="small radius button right" tabindex="0" id="backToGallery" onclick="backToGallery()"> Back To Gallery
@@ -79,13 +79,10 @@
 		    		<div class="small-10 medium-10 large-10 columns divider">
 					
 				      	<div class="row content-details">
-					      	<h4>Import project</h4>
+					      	<h4>Import projects</h4>
 					        
 						    
-								<p> Click <span class="uicontrol">Import</span> and the <span class="uicontrol">Transformation_Map</span> application will be imported into your workspace. </p>
-								
-							
-								<p> The <span class="uicontrol">Transformation_Map</span> message flow will be opened for you. </p>
+								<p> The HTTPInputApplication application includes one project that is imported into your workspace. </p>
 								
 							
 						</div>
@@ -96,7 +93,7 @@
 							
 								
 																
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions from scratch">Developing integration solutions from scratch</a> </li>
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using applications">Developing integration solutions by using applications</a> </li>
 							   	
 							
 							</ul>
@@ -117,31 +114,16 @@
 					<div class="small-12 medium-12 large-12 columns">
 					
 						<div class="row content-details">
-						  	<h4>Prepare an Integration Server</h4>
+						  	<h4>Imported projects</h4>
 						    
 						    
-								<p> Create an integration server and connect your App Connect Enterprise Toolkit: </p>
+								<p> The HTTPInputApplication application is shown in the Application Development view of your workspace. </p>
 								
+							
+								<p>  </p>
 								
-									
-									<ol>
-									
-									
-										<li> Assuming you are using a Windows platform, open an App Connect Enterprise Command Console and start an integration server using the following command:<br><code>IntegrationServer --work-dir C:\TESTSERVER --name TESTSERVER --admin-rest-api 7600 --http-port-number 7800 --console-log</code> <br>where <b>C:\TESTSERVER</b> is a folder on your file system that the server will use for its working directory.
-										
-										</li>
-									
-										<li> In the App Connect Enterprise Toolkit Integration Explorer view, right click the folder <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/IntegrationServers.png" alt> and select the menu item  <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/ConnectToAnIntegrationServer.png" alt>. In the connection details panel, specify the <b>Host name</b> to be <b>localhost</b>, the <b>Port</b> to be <b>7600</b> and click Finish. This will connect your Toolkit and display the integration server that you started in the last step <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/TESTSERVER.png" alt>
-										
-										</li>
-									
-										<li> Locate <b>Transformation_Map.bar</b> inside the <b>Transformation_Map</b> application in the Application Development view, and deploy it by dragging and dropping the BAR file on to the integration server in the Integration Explorer view.
-										
-										</li>
-									
-									
-									</ol>
-									
+							
+								<p> The application will be deployed to your default integration server. The message flow is then running on your integration server and ready to process messages. </p>
 								
 							
 						</div>
@@ -152,7 +134,7 @@
 							
 								
 																
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/br28800_.htm')" title="Knowledge Center link to Using Message Maps">Using Message Maps</a> </li>
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using integration services">Developing integration solutions by using integration services</a> </li>
 							   	
 							
 							</ul>
@@ -166,27 +148,50 @@
 		    		<div class="small-10 medium-10 large-10 columns divider">
 					
 				    	<div class="row content-details">
-					      	<h4>Test the message flow to complete the tutorial</h4>
+					      	<h4>Follow these steps to complete the tutorial</h4>
 					        
 						    
-								<p> Test the <b>Transformation_Map</b> message flow by sending it data using an HTTP client such as cURL: </p>
+								<p> The HTTPInputApplication application is shown in the Application Development view of your workspace. </p>
 								
 								
 									
 									<ol>
 									
 									
-										<li> <code>cd C:\workspace</code><br> where <b>C:\workspace</b> is the location of your Toolkit Eclipse workspace directory on the filesystem.<br><code>curl -X POST http://localhost:7800/Transformation_Map -d @.\Transformation_Map\input.xml</code>
+										<li> Open the HTTPInputMessageFlow, and click the Flow Exerciser icon <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png" alt> to start recording the message path through the flow.
 										
 										</li>
 									
-										<li> The transformed response message should look like this:<br>&lt;SaleEnvelopeA&gt;&lt;SaleListA&gt;&lt;Statement Style="Full" Type="Monthly"&gt;&lt;Customer&gt;&lt;Initials&gt;KA&lt;/Initials&gt;&lt;Name&gt;Braithwaite&lt;/Name&gt;&lt;Balance&gt;00.50&lt;/Balance&gt;&lt;/Customer&gt;&lt;Purchases&gt;&lt;Article&gt;&lt;Desc&gt;Twister&lt;/Desc&gt;&lt;Cost&gt;0.48&lt;/Cost&gt;&lt;Qty&gt;01&lt;/Qty&gt;&lt;/Article&gt;&lt;Article&gt;&lt;Desc&gt;The Times Newspaper&lt;/Desc&gt;&lt;Cost&gt;0.32&lt;/Cost&gt;&lt;Qty&gt;01&lt;/Qty&gt;&lt;/Article&gt;&lt;/Purchases&gt;&lt;Amount Currency="Sterling"&gt;0.8&lt;/Amount&gt;&lt;/Statement&gt;&lt;Statement Style="Full" Type="Monthly"&gt;&lt;Customer&gt;&lt;Initials&gt;TJ&lt;/Initials&gt;&lt;Name&gt;Dunnwin&lt;/Name&gt;&lt;Balance&gt;81.84&lt;/Balance&gt;&lt;/Customer&gt;&lt;Purchases&gt;&lt;Article&gt;&lt;Desc&gt;The Origin of Species&lt;/Desc&gt;&lt;Cost&gt;35.74&lt;/Cost&gt;&lt;Qty&gt;02&lt;/Qty&gt;&lt;/Article&gt;&lt;Article&gt;&lt;Desc&gt;Microscope&lt;/Desc&gt;&lt;Cost&gt;57.92&lt;/Cost&gt;&lt;Qty&gt;01&lt;/Qty&gt;&lt;/Article&gt;&lt;/Purchases&gt;&lt;Amount Currency="Euros"&gt;129.41&lt;/Amount&gt;&lt;/Statement&gt;&lt;/SaleListA&gt;&lt;/SaleEnvelopeA&gt;
+										<li> Click the Send Message icon <img src="https://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png" alt> to select a message to send to the flow.
+										
+										</li>
+									
+										<li> Choose the ExampleInputMessage1, edit the message data if you like, and click Send. Your request message is sent to the HTTP input node.
+										
+										
+											
+											<ul>
+											
+												
+													<li> Substep one</li>
+												
+													<li> Substep two</li>
+												
+											
+											</ul>
+											
 										
 										</li>
 									
 									
 									</ol>
 									
+								
+							
+								<p> After the request message is processed, the message path is automatically highlighted on the message flow. </p>
+								
+							
+								<p> Click on any connection to see the data that passed through that connection. You can see that the request (input) message data has two fields named InputField1 and InputField2. The response (output) message has converted this to fields named OutputField1 and OutputField2. </p>
 								
 							
 						</div>
@@ -197,7 +202,12 @@
 							
 								
 																
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/br28800_.htm')" title="Knowledge Center link to Using Message Maps">Using Message Maps</a> </li>
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using applications">Developing integration solutions by using applications</a> </li>
+							   	
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/rt26110_.htm')" title="Knowledge Center link to Testing your message flow by using the Flow exerciser">Testing your message flow by using the Flow exerciser</a> </li>
 							   	
 							
 							</ul>
@@ -207,6 +217,13 @@
 					
 					<div class="small-2 medium-2 large-2 columns">
 					
+					
+					
+					<h4 class="tkaction"><a href="javascript:;" onclick="deployArtifacts()"> Deploy <img class="icon-image" src="https://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+				    
+					
+					
+					<hr>
 					
 					
 					
