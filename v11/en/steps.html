@@ -43,7 +43,7 @@
 	</div>
 	<div class="row">
 	  <div class="small-9 medium-9 large-9 columns">
-	    <h4 class="title">Transformation using a Map in a message flow <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
+	    <h4 class="title">HTTP Input to drive a message flow <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
 	  </div>
 	  <div class="small-3 medium-3 large-3 columns">
 		<a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm')" class="small right helplink">IBM Knowledge Center</a> 
@@ -52,7 +52,7 @@
 	<hr>
 	<div class="row">
 		<div class="small-10 medium-10 large-10 columns">
-		<h5> Learn how to use a Mapping node to transform data using a Map in an IBM Integration Bus message flow by exploring this simple example. </h5>
+		<h5> Learn how to use an HTTPInput node to parse JSON data in an IBM Integration Bus message flow by exploring this simple example. </h5>
 		</div>
 		<div class="small-2 medium-2 large-2 columns">
 			<button class="small radius button right" tabindex="0" id="backToGallery" onclick="backToGallery()"> Back To Gallery
@@ -79,13 +79,10 @@
 		    		<div class="small-10 medium-10 large-10 columns divider">
 					
 				      	<div class="row content-details">
-					      	<h4>Import project</h4>
+					      	<h4>Import projects</h4>
 					        
 						    
-								<p> Click <span class="uicontrol">Import</span> and the <span class="uicontrol">Transformation_Map</span> application will be imported into your workspace. </p>
-								
-							
-								<p> The <span class="uicontrol">Transformation_Map</span> message flow will be opened for you. </p>
+								<p> The HTTPInputApplication application includes one project that is imported into your workspace. </p>
 								
 							
 						</div>
@@ -96,7 +93,7 @@
 							
 								
 																
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions from scratch">Developing integration solutions from scratch</a> </li>
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using applications">Developing integration solutions by using applications</a> </li>
 							   	
 							
 							</ul>
@@ -120,13 +117,13 @@
 						  	<h4>Imported projects</h4>
 						    
 						    
-								<p> The <span class="uicontrol">Transformation_Map</span> application is now shown in the Application Development view of your workspace. </p>
+								<p> The HTTPInputApplication application is shown in the Application Development view of your workspace. </p>
 								
 							
-								<p> No other preparation steps are required for this tutorial. </p>
+								<p>  </p>
 								
 							
-								<p> Next you will use the Flow exerciser to send HTTP requests to the message flow. </p>
+								<p> The application will be deployed to your default integration server. The message flow is then running on your integration server and ready to process messages. </p>
 								
 							
 						</div>
@@ -137,7 +134,7 @@
 							
 								
 																
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/br28800_.htm')" title="Knowledge Center link to Using Message Maps">Using Message Maps</a> </li>
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using integration services">Developing integration solutions by using integration services</a> </li>
 							   	
 							
 							</ul>
@@ -154,14 +151,14 @@
 					      	<h4>Follow these steps to complete the tutorial</h4>
 					        
 						    
-								<p> The <span class="uicontrol">Transformation_Map</span> message flow should be open already: </p>
+								<p> The HTTPInputApplication application is shown in the Application Development view of your workspace. </p>
 								
 								
 									
 									<ol>
 									
 									
-										<li> Click the Flow Exerciser icon <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png" alt> to start recording the message path through the flow.
+										<li> Open the HTTPInputMessageFlow, and click the Flow Exerciser icon <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png" alt> to start recording the message path through the flow.
 										
 										</li>
 									
@@ -169,7 +166,20 @@
 										
 										</li>
 									
-										<li> Choose Message1, edit the message data if you like, and click Send. Your request message is sent to the HTTP Input node.
+										<li> Choose the ExampleInputMessage1, edit the message data if you like, and click Send. Your request message is sent to the HTTP input node.
+										
+										
+											
+											<ul>
+											
+												
+													<li> Substep one</li>
+												
+													<li> Substep two</li>
+												
+											
+											</ul>
+											
 										
 										</li>
 									
@@ -181,10 +191,7 @@
 								<p> After the request message is processed, the message path is automatically highlighted on the message flow. </p>
 								
 							
-								<p> Click on any connection to see the data that passed through that connection. </p>
-								
-							
-								<p> You can see that the request (input) message data has been transformed into a different response XML message. </p>
+								<p> Click on any connection to see the data that passed through that connection. You can see that the request (input) message data has two fields named InputField1 and InputField2. The response (output) message has converted this to fields named OutputField1 and OutputField2. </p>
 								
 							
 						</div>
@@ -192,6 +199,11 @@
 						<div class="row content-details"> 	
 							<h4>Find out more</h4>
 							<ul>
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using applications">Developing integration solutions by using applications</a> </li>
+							   	
 							
 								
 																
@@ -205,6 +217,13 @@
 					
 					<div class="small-2 medium-2 large-2 columns">
 					
+					
+					
+					<h4 class="tkaction"><a href="javascript:;" onclick="deployArtifacts()"> Deploy <img class="icon-image" src="https://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+				    
+					
+					
+					<hr>
 					
 					
 					
