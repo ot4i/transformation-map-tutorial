@@ -33,7 +33,7 @@
                 <expression>
                     <input path="$Item/Price" var="Price"/>
                     <output path="Cost" var="Cost"/>
-                    <code lang="xpath"> fn:round-half-to-even( (xs:decimal($Price) * xs:decimal(1.6)),  2 )</code>
+                    <code lang="xpath">fn:round-half-to-even( (xs:decimal($Price) * xs:decimal(1.6)),  2 )</code>
                 </expression>
                 <move>
                     <input path="$Item/Quantity"/>
@@ -55,7 +55,7 @@
             <expression>
                 <input path="$Invoice/." var="Invoice1"/>
                 <output path="Amount/mixed" var="mixed"/>
-                <code lang="xpath"> fn:round-half-to-even(  (fn:sum($Invoice1/Item/(Price*Quantity)) * 1.6 ), 2 )</code>
+                <code lang="xpath">fn:round-half-to-even(  (fn:sum($Invoice1/Item/(Price*Quantity)) * 1.6 ), 2 )</code>
             </expression>
             <move>
                 <input path="$Invoice/Currency"/>
